@@ -3,8 +3,8 @@ class MainController extends BaseController {
 	// 首页
 	function actionIndex(){
 	    $guest_book = new Model("guestbook");
-//	    $this->records = $guest_book->findAll();
-//	    var_dump($this->records);
+	    $this->records = $guest_book->findAll();
+//	    dump($this->records);
 	    //渲染页面
         $this->display("guestbook.html");
 	}

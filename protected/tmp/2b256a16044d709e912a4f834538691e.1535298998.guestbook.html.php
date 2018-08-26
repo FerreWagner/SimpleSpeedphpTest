@@ -24,57 +24,35 @@
         <hr />
         <div class="row">
             <div class="col-md-8">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" src="/i/img/1.gif" alt="...">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">第一条留言<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></h4> 某些插件和 CSS 组件依赖于其它插件。如果你是单个引入每个插件的，请确保在文档中检查插件之间的依赖关系。注意，所有插件都依赖 jQuery （也就是说，jQuery必须在所有插件之前引入页面）。
-                                bower.json 文件中列出了 Bootstrap 所支持的 jQuery 版本。
-                                <blockquote class="blockquote-reverse small">
-                                    <ul class="list-inline text-muted">
 
-                                        <li>by</li>
-                                        <li>你好</li>
-                                        <li>2016年2月25日 14:02:23</li>
-                                        <li>
-                                            <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 100</button>
-                                        </li>
-                                    </ul>
-                                </blockquote>
+                <?php $_foreach_r_counter = 0; $_foreach_r_total = count($records);?><?php foreach( $records as $r ) : ?><?php $_foreach_r_index = $_foreach_r_counter;$_foreach_r_iteration = $_foreach_r_counter + 1;$_foreach_r_first = ($_foreach_r_counter == 0);$_foreach_r_last = ($_foreach_r_counter == $_foreach_r_total);$_foreach_r_counter++;?>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="/i/img/1.gif" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><?php echo htmlspecialchars($r['title'], ENT_QUOTES, "UTF-8"); ?><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></h4> <?php echo htmlspecialchars($r['contents'], ENT_QUOTES, "UTF-8"); ?>
+                                    <blockquote class="blockquote-reverse small">
+                                        <ul class="list-inline text-muted">
+
+                                            <li>by</li>
+                                            <li><?php echo htmlspecialchars($r['username'], ENT_QUOTES, "UTF-8"); ?></li>
+                                            <li><?php echo date("Y年m月d日 H:i:s", $r['createtime']);?></li>
+                                            <li>
+                                                <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 100</button>
+                                            </li>
+                                        </ul>
+                                    </blockquote>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="#">
-                                    <img class="media-object" src="/i/img/0.gif" alt="...">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">第一条留言<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></h4> 某些插件和 CSS 组件依赖于其它插件。如果你是单个引入每个插件的，请确保在文档中检查插件之间的依赖关系。注意，所有插件都依赖 jQuery （也就是说，jQuery必须在所有插件之前引入页面）。
-                                bower.json 文件中列出了 Bootstrap 所支持的 jQuery 版本。
-                                <blockquote class="blockquote-reverse small">
-                                    <ul class="list-inline text-muted">
-                                        <li>by</li>
-                                        <li>你好</li>
-                                        <li>2016年2月25日 14:02:23</li>
-                                        <li>
-                                            <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 100</button>
-                                        </li>
-                                    </ul>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+
                 <nav>
                     <ul class="pagination pull-right">
                         <li>
