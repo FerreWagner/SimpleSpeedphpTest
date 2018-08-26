@@ -21,7 +21,7 @@ $domain = array(
 				'MYSQL_HOST' => 'localhost',
 				'MYSQL_PORT' => '3306',
 				'MYSQL_USER' => 'root',
-				'MYSQL_DB'   => 'heater',
+				'MYSQL_DB'   => 'speedphp_test',
 				'MYSQL_PASS' => '',
 				'MYSQL_CHARSET' => 'utf8',
 

@@ -1,6 +1,6 @@
 <?php
 class BaseController extends Controller{
-	public $layout = "layout.html";
+	public $layout = "";
 
 	function init(){
 		header("Content-type: text/html; charset=utf-8");
